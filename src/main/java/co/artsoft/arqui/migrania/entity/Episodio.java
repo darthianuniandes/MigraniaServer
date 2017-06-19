@@ -1,4 +1,4 @@
-package co.artsoft.arqui.migrania.controller;
+package co.artsoft.arqui.migrania.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

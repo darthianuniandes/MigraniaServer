@@ -1,4 +1,4 @@
-package co.artsoft.arqui.migrania.controller;
+package co.artsoft.arqui.migrania;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
