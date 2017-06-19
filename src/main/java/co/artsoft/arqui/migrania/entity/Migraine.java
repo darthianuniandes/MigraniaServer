@@ -38,6 +38,21 @@ public class Migraine {
 		joinColumns = @JoinColumn(name = "migraine_id", referencedColumnName = "id"),
 		inverseJoinColumns = @JoinColumn(name = "food_id", referencedColumnName = "id"))
 	private Set<Food> foods = new HashSet<Food>();
+    
+    @ManyToMany(cascade = CascadeType.ALL)
+   	@JsonBackReference
+   	@JoinTable(name = "migraine_foods",
+   		joinColumns = @JoinColumn(name = "migraine_id", referencedColumnName = "id"),
+   		inverseJoinColumns = @JoinColumn(name = "food_id", referencedColumnName = "id"))
+   	private Set<Location> locations = new HashSet<Location>();
+
+	public Set<Location> getLocations() {
+		return locations;
+	}
+
+	public void setLocations(Set<Location> locations) {
+		this.locations = locations;
+	}
 
 	public Set<Food> getFoods() {
 		return foods;
