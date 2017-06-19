@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import co.artsoft.arqui.migrania.dao.EpisodioDAO;
-import co.artsoft.arqui.migrania.entity.Episodio;
+import co.artsoft.arqui.migrania.entity.Migraine;
 
 
 @Controller // This means that this class is a Controller
@@ -25,14 +25,14 @@ public class EpisodioController {
 		// name
 		// @RequestParam means it is a parameter from the GET or POST request
 
-		Episodio n = new Episodio();
-		n.setPatronSuenio(patron);
+		Migraine n = new Migraine();
+		n.setSleepPattern(patron);
 		episodioRepository.save(n);
 		return "Saved";
 	}
 
 	@GetMapping(path = "/all")
-	public @ResponseBody Iterable<Episodio> getAllUsers() {
+	public @ResponseBody Iterable<Migraine> getAllUsers() {
 		// This returns a JSON or XML with the users
 		return episodioRepository.findAll();
 	}
