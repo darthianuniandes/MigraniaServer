@@ -52,7 +52,7 @@ public class FileUploadController {
                 .body(file);
     }
 
-    @PostMapping("/files")
+    @PostMapping("/")
     public String handleFileUpload(@RequestParam("file") MultipartFile file,
                                    RedirectAttributes redirectAttributes) {
 
