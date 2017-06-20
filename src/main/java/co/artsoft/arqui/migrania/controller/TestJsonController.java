@@ -15,6 +15,7 @@ import co.artsoft.arqui.migrania.entity.Migraine;
 import co.artsoft.arqui.migrania.entity.TestJson;
 
 @RestController
+@RequestMapping(path = "/migraine")
 public class TestJsonController {
 	
 	@Autowired // This means to get the bean called userRepository
@@ -24,7 +25,7 @@ public class TestJsonController {
     private static final String template = "Hello, %s!";
     private final AtomicLong counter = new AtomicLong();
 	
-	@RequestMapping("/testISM")
+	@RequestMapping("/add")
 	public Migraine test(@RequestParam(value="date", defaultValue="2017-06-19") Date date,
 			@RequestParam(value="painLevel", defaultValue= "1") int painLevel,
 			@RequestParam(value="audioFile", defaultValue="/foo") String audioFile,
